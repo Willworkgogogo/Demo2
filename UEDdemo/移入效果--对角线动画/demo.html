@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对角线移入动画效果实现</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{ 
+            font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        .post-img{
+            width: 284px;
+            height: 290px;
+            border: 1px solid rgb(221, 221, 221);
+            background: #fff;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .post-img:hover .post-info-front{
+            top: 160px;
+        }
+        .post-img:hover .border-top{
+            left: 0;
+        }
+        .post-img:hover .border-right{
+            top: 0;
+        }
+        .post-img:hover .border-bottom{
+            left: 0;
+        }
+        .post-img:hover .border-left{
+            top: 0;
+        }
+        .post-info-front{
+            padding: 10px 10px;
+            position: absolute;
+            left: 0;
+            top: 200px;
+            transition: all .5s ease-in-out;
+            background: #fff;
+        }
+        .bottom{
+            height: 40px;
+        }
+        .title{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .content{
+            padding-top: 15px;
+            margin-bottom: 33px;
+        }
+        .post-img .border{
+            display: block;
+            position: absolute;
+            background: #b3b3b3;
+            z-index: 1;
+            transition: all .5s ease;
+        }
+        .border-top{
+            width: 100%;
+            height: 1px;
+            top: 0;
+            left: -100%;
+        }
+        .border-right{
+            width: 1px;
+            height: 100%;
+            top: 100%;
+            left: 283px;
+        }
+        .border-bottom{
+            width: 100%;
+            height: 1px;
+            top: 289px;
+            left: 100%;
+        }
+        .border-left{
+            width: 1px;
+            height: 100%;
+            top: -100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-img">
+        <span class="border border-top"></span>
+        <span class="border border-right"></span>
+        <span class="border border-bottom"></span>
+        <span class="border border-left"></span>
+        <a href="">
+            <img width="284" height="200" src="http://uedc.163.com/wp-content/uploads/2011/12/%E5%86%8D%E8%A7%81%EF%BC%81%E5%B7%AE%E4%B8%8D%E5%A4%9A%E5%85%88%E7%94%9F.jpg" alt="">
+        </a>
+        <div class="post-info-front">
+            <span class="title">再见！差不多先生</span>
+            <p class="content">关于差不多先生 你知道中国最有名的人是谁？</p>
+            <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
