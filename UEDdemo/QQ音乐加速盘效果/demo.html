@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0; }
+        body{ background: #000; }
+        .watch{
+            position: relative;
+            margin: 100px auto;
+            width: 476px;
+            height: 478px;
+            background: url(watch_bg.png) no-repeat;
+        }
+        .watch-hand{
+            position: absolute;
+            left: 220px;
+            top: 220px;
+            width: 131px;
+            height: 105px;
+            background: url(watchHand.png) -448px -824px no-repeat;
+            animation: watchHand 2s both;
+            transform-origin: 24px 24px;
+        }
+        .watch-num1{
+            position: absolute;
+            left: 204px;
+            top: 320px;
+            width: 40px;
+            height: 50px;
+            background: url(watch_num.png) no-repeat;
+            animation: watchNum1 1.5s steps(6) both;
+        }
+        .watch-num2{
+            position: absolute;
+            left: 248px;
+            top: 320px;
+            width: 40px;
+            height: 50px;
+            background: url(watch_num.png) no-repeat;
+            animation: watchNum2 .5s steps(10) 3;
+        }
+        @keyframes watchHand {
+            0% { transform: rotate(-252deg)}
+            70% { transform: rotate(3deg)}
+            80% { transform: rotate(-2deg)}
+            90% { transform: rotate(1deg)}
+            100% { transform: rotate(0deg)}
+        }
+        @keyframes watchNum1 {
+            0% { background-position: 0 0}
+            100% { background-position: 0 -300px}
+        }
+        @keyframes watchNum2 {
+            0% { background-position: 0 0}
+            100% { background-position: 0 -500px}
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="watch">
+        <div class="watch-hand"></div>
+        <div class="watch-num1"></div>
+        <div class="watch-num2"></div>
+    </div>
+    
+</body>
+</html>
