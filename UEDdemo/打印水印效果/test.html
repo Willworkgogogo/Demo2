@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打印水印效果</title>
+</head>
+<body>
+    <button type="button" class="btn_print">Print</button>
+    <script>
+        
+        function printData(){
+            var btn_print = document.querySelector('.btn_print');
+            btn_print.on("click",function(){
+                window.print();
+                var conHeight = dom.table_print.height();
+                var conWidth = dom.table_print.width();
+                console.log("conHeight:",conHeight+"conWidth:",conWidth)
+                // var num = Math.ceil(conHeight*conWidth/800/855);
+                var num = Math.ceil(conHeight*conWidth/1123/794)   
+                /*A4像素 
+                    分辨率72，595*842
+                        96， 794*1123
+                        120， 1487*2105
+                        150， 1240*1754
+                        300， 2480*3508
+                */
+                console.log(num)
+                dom.print_logo.html("");
+                for( var i=0;i<num;i++){
+                    dom.print_logo.html('<img src="../static/image/print_logo.png" />');
+                }
+                console.log(dom.print_logo.html())
+                
+            })
+        }
+        printData();
+    </script>
+</body>
+</html>

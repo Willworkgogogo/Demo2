@@ -38,7 +38,7 @@ x = ['hello', 12, true];
 //为一组数值赋予友好的名字
 enum Color { Red, Green, Blue };
 let c: Color = Color.Green;
-let d: Color = Color[1];
+let d: string = Color[1];
 //默认从0开始为元素编号， 可以手动修改 如 enum Color { Red = 1, Green = 3, Blue = 9 };
 
 
