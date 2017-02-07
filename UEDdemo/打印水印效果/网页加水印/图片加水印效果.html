@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script type="text/javascript" src="../../units/jquery/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("img").each(function() {
+                    // 特殊情况--过滤掉无关的图片
+                    if($(this).attr("id") == "img1") {
+                        return;
+                    }
+                    var top = $(this).offset().top + 10; //这里数字根据需要调，一般配在数据库中
+                    var left = $(this).offset().left + 10;
+                    var styleString = "width:250px;height:50px;display:block;position:absolute;left:" + left + "px;top:" + top + "px;";
+                    var imageUrl = "water-logo.png";
+                    //追加水印div
+                    $(document.body).append('<div id="shuiyinDiv" style=' + styleString + '><img src=' + imageUrl + '></div>');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="water-logo.png" />
+        </div>
+    </body>
