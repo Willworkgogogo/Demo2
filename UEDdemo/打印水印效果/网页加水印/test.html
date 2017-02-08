@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打印水印效果</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        .wrap{
+            position: relative;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .image{
+            z-index: 1;
+            position: absolute;
+
+        }
+        .content{
+            z-index: 2;
+        }
+        .content>p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="image">
+            <img src="water-logo.png" alt="">
+        </div>
+        <div class="content">
+            <p>我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印</p>
+            <p>我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印</p>
+            <p>我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印我下面有水印</p>
+        </div>
+    </div>
+</body>
+</html>
