@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        .wrap{
+            margin: 20px auto;
+            width: 1000px;
+        }
+        .wrap:nth-child(1){
+            height: 100px;
+            background-color: #000;
+        }
+        .wrap:nth-child(2){
+            height: 200px;
+            background-color: #222;
+        }
+        .wrap:nth-child(3){
+            height: 300px;
+            background-color: #444;
+        }
+        .wrap:nth-child(4){
+            height: 400px;
+            background-color: #666;
+        }
+        .wrap:nth-child(5){
+            height: 500px;
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap1 wrap"></div>
+    <div class="wrap2 wrap"></div>
+    <div class="wrap3 wrap"></div>
+    <div class="wrap4 wrap"></div>
+    <div class="wrap5 wrap"></div>
+
+    <script src="../../units/jquery/jquery.min.js"></script>
+    <script>
+        (function($){
+            $.fn.maxHeight = function() {
+                var heightArr = [];
+                this.each(function(index, element){
+                    heightArr.push($(this).height())
+                })
+                var heightSort = heightArr.sort(function(a, b){
+                    return b - a;
+                })
+                return heightSort[0];
+            }
+        })(jQuery)
+        console.log($('.wrap').maxHeight());
+    </script>
+</body>
+</html>
