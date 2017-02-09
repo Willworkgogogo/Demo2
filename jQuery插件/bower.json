@@ -1,0 +1,17 @@
+{
+  "name": "jquery",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "wangweiwei <will_workhard@163.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Willworkgogogo/Demo2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
