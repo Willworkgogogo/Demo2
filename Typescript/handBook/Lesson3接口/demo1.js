@@ -14,4 +14,19 @@ function createSquare(config) {
     }
     return newSquare;
 }
-console.log(createSquare({ width: 1000 }));
+var p1 = { x: 10, y: 10 };
+var mySearch;
+mySearch = function (source, subString) {
+    var result = source.search(subString);
+    if (result == -1) {
+        return false;
+    }
+    else {
+        return true;
+    }
+};
+var Clock = (function () {
+    function Clock() {
+    }
+    return Clock;
+}());

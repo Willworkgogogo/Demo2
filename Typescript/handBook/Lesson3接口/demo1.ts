@@ -47,3 +47,62 @@ interface Point {
 }
 
 let p1: Point = { x: 10, y: 10};
+
+
+
+//接口： 1. 描述对象的外形  2，描述函数类型
+// 2，描述函数类型， 需要给接口定义一个----调用签名,它就像一个只有参数列表和返回值类型的函数定义， 参数列表里的每个参数都需要名字和类型
+interface SearchFunc {
+    ( source: string, subString: string ): boolean;
+}
+let mySearch: SearchFunc;
+mySearch = function (source: string, subString: string) {
+    let result = source.search(subString);
+    if (result == -1) {
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+//可索引类型
+//索引签名， 描述了索引和返回值的类型
+// interface StringArray {
+//     [index: number]: string;
+// }
+
+
+
+// 类 类型
+//实现接口
+// interface ClockInterface {
+//     currentTime: Date;
+// }
+
+// class Clock implements ClockInterface {
+//     currentTime: Date;
+//     constructor(h: number, m: number) {}
+// }
+
+
+// interface ClockInterface {
+//     currentTime: Date;
+//     setTime(d: Date);
+// }
+// class Clock implements ClockInterface {
+//     currentTime: Date;
+//     setTime(d: Date) {
+//         this.currentTime = d;
+//     };
+//     constructor(h: number, m: number) {};
+// }
+
+
+interface ClockConstructor {
+    new (hour: number, minute: number);
+}
+class Clock implements ClockConstructor {
+    currentTime: Date;
+    constructor(h: number, m: number);
+}
