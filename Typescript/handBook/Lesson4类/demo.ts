@@ -54,5 +54,6 @@ class Horse extends Animal {
 let sam = new Snake("Sammy the Python");
 let tom: Animal = new Horse("Tommy the Palomino");
 
+console.log('hahah:',sam.name)
 sam.move();
 tom.move(34);
