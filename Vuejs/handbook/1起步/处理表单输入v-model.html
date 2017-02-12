@@ -5,11 +5,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="app">
+        <div>{{message}}</div>
+        <input type="text" v-model="message">
+    </div>
     <script src="../units/vue.js"></script>
     <script>
         var app = new Vue({
-            
+            el: '.app',
+            data: {
+                message: 'Hello vue'
+            }
         })
     </script>
 </body>
