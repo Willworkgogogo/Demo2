@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span v-bind:title="message">
+            Hover me。。。
+        </span>
+    </div>
+    <script src="../units/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'You loaded this page on' + new Date()
+            }
+        })
+    </script>
+</body>
+</html>
