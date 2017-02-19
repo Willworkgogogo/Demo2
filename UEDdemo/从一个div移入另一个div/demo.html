@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1, .box2 {
+            float: left;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+        }
+        .box2 {
+            width: 200px;
+            height: 400px;
+            background-color: lightblue;
+            margin-left: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <script>
+
+        /**
+        * ===实现qq移入侧边栏显示，并能移入侧边栏效果===
+        * 通过延时隐藏方法实现
+        */ 
+        
+        window.onload = function() {
+            var box1 = document.querySelector('.box1');
+            var box2 = document.querySelector('.box2');
+            box1.onmouseover = box2.onmouseover = function() {
+                clearTimeout(box2.timer)
+                box2.style.display = "block"
+            }
+            box1.onmouseout = box2.onmouseout = function() {
+                box2.timer = setTimeout(function(){
+                    box2.style.display = "none";
+                },100)
+            }
+        }
+    </script>
+</body>
+</html>
