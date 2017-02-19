@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间显示</title>
+</head>
+<body>
+    <div class="box" style="font-size: 50px;"></div>
+
+    <script>
+        window.onload = function() {
+            
+
+            function GetTime() {
+                
+            }
+            
+            // 获取时间
+            GetTime.prototype.getTime = function() {
+                this.time = new Date();
+
+                this.year = this.time.getFullYear();
+                this.month = this.time.getMonth() + 1;
+                this.date = this.time.getDate();
+                this.day = this.time.getDay();
+                this.hours = this.time.getHours();
+                this.minutes = this.time.getMinutes();
+                this.sec = this.time.getSeconds();
+
+                
+                var str = newTime.year + '年' + newTime.month +'月'+ this.date +'日'+ this.dayToChinese(this.day) +' '+ this.toTwo(this.hours) +'时'+ this.toTwo(this.minutes) +'分'+ this.toTwo(this.sec) + '秒';
+                document.querySelector('.box').innerHTML = str;
+            }
+            
+            //星期几
+            GetTime.prototype.dayToChinese = function(num) {
+                var str = "";
+                switch (num) {
+                    case 0:
+                        str = "星期日"
+                        break;
+                    case 1:
+                        str = "星期一"
+                        break;
+                    case 2:
+                        str = "星期二"
+                        break;
+                    case 3:
+                        str = "星期三"
+                        break;
+                    case 4:
+                        str = "星期四"
+                        break;
+                    case 5:
+                        str = "星期五"
+                        break;
+                    case 6:
+                        str = "星期六"
+                        break;
+                    default: 
+                        str = "传入参数有误，请重新确认！"
+                }
+                return str;
+            }
+            
+            //00显示问题
+            GetTime.prototype.toTwo = function(num) {
+                return num < 10 ? '0'+num : ''+num;
+            }
+
+            var newTime = new GetTime();
+            newTime.getTime(); //定时器1s后执行， 先执行解决停顿问题；
+            setInterval(newTime.getTime, 1000);
+
+        }
+    </script>
+</body>
+</html>
