@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /**
+         *  ===js原生获取元素非行内样式===
+         *  1. document.getElementById('id').style.attr 方法只能获取行内样式
+         *  2. window.getComputedStyle(obj, null)[attr] -->非IE
+         *     window.currentStyle(obj)[attr] -->IE
+         * */ 
+        function getStyle(obj, attr) {
+            if(obj.currentStyle) {
+                return obj.currentStyle[attr];
+            } else {
+                return getComputedStyle(obj, false)[attr];
+            }
+            // 简写
+            // return window.getComputedStyle ? getComputedStyle(obj)[attr] : obj.currentStyle[attr];
+        }
+
+
+
+        function startMove(obj, json, endFun) {
+            //开始前关闭之前obj上的定时器
+            clearInterval(obj.timer);
+
+            //定时器
+            obj.timer = setInterval(callback, 30);
+
+            //运动函数
+            var callback = function() {
+                var bStop = true; // 假设所有值都有目标
+                for (var attr in json) {
+                    
+                    //单独处理透明度 
+                    if(attr == 'opacity') {
+                        var cur = Math.round(parseFloat(getStyle(obj, attr))*100);
+                    }else {
+                        var cur = parseInt(getStyle(obj, attr));
+                    }
+
+                    //速度处理
+                    var speed = (json[attr] - cur) / 6;
+                    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
