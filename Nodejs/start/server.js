@@ -6,7 +6,7 @@ const port = "9999"
 var server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader("Content-type", 'text/plain');
-    res.end('hello world\n');
+    res.end('hello Nodejs\n');
 })
 
 server.listen(port, hostname, () => {
