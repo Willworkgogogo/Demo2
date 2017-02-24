@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="search">搜搜</button>
+    <script>
+        window.onload = function() {
+            var input = querySelector("input"),
+                btn   = querySelector(".search")
+            
+            // 搜搜按钮点击
+            btn.onclick = function() {
+                window.location.href = "http://www.baidu.com";
+            }
+
+            //回车键触发btn按钮， 做兼容处理
+            document.onkeydown = function(ev) {
+                var ev = ev || window.event;
+                //退出键
+                switch (ev.keyCode) {
+                    case 27:
+                        alert("esc 退出键")
+                        break;
+                    case 13:
+                        btn.click();
+                        break;
+                    default:
+                        alert("瞎按什么")
+                }
+            } 
+
+            function querySelector(el) {
+                return document.querySelector(el)
+            }; 
+        }
+    </script>
+</body>
+</html>
