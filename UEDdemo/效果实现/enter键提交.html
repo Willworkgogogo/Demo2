@@ -20,6 +20,7 @@
             //回车键触发btn按钮， 做兼容处理
             document.onkeydown = function(ev) {
                 var ev = ev || window.event;
+                console.log(ev.keyCode)
                 //退出键
                 switch (ev.keyCode) {
                     case 27:
@@ -27,6 +28,18 @@
                         break;
                     case 13:
                         btn.click();
+                        break;
+                    case 38:
+                        console.log("上")
+                        break;
+                    case 40:
+                        console.log("下")
+                        break;
+                    case 37:
+                        console.log("左")
+                        break;
+                    case 39:
+                        console.log("右")
                         break;
                     default:
                         alert("瞎按什么")
