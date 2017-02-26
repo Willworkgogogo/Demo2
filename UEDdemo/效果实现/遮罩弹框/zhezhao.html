@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遮罩弹框</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            font-size: 14px;
+            line-height: 400px;
+            color: #999;
+            border: 1px dotted #ccc;
+        }
+        .login-btn{
+            display: block;
+            text-align: center;
+            width: 100%;
+            line-height: 100px;
+            color: aquamarine;
+            cursor: pointer;
+        }
+        .login-btn:hover{
+            text-decoration: underline;
+        }
+        .zhezhao{
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #000;
+            opacity: 0.75;
+            filter: alpha(opacity=75);
+            z-index: 10000;
+        }
+        .alert-box{
+            width: 500px;
+            height: 300px;
+            background-color: lightsalmon;
+            position: absolute;
+            z-index: 10001;
+        }
+        .close-btn{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #999;
+            cursor: pointer;
+        }
+        .close-btn:hover{
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <span class="login-btn">点击登录</span>
+    <ul>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+        <li>满满的内容护体</li>
+    </ul>
+    <!--<div class="zhezhao"></div>
+    <div class="alert-box">
+        <span class="close-btn">close</span>
+    </div>-->
+
+    <script src="./zhezhao.js"></script>
+</body>
+</html>
