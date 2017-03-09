@@ -77,6 +77,21 @@ console.log("0 :", arr[0](), " 1 : ", arr[1]() , " 2 : ", arr[2]()) //0 : 0  1 :
 
 
 
+// 迭代器
+function setUp(arr) {
+	var timer = 0
+	return function next(){
+		return console.log(arr[timer++])
+	}
+}
+var next = setUp(['a', 'b', 'c'])
+next() //a
+next() //b
+next() //c
+next() // undefined
+
+
+
 
 
 
