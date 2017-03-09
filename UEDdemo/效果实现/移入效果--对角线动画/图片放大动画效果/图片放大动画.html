@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片放大效果</title>
+	<style type="text/css">
+		.pic-wrapper{
+			position: relative;
+			width: 290px;
+			height: 231px;
+			border: 1px solid #e1e1e1;
+			overflow: hidden;
+		}
+		.college-pic{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
+			background: url(https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/mms-res/fed/ife/ife_tutor/htmlcss.ec85cad580b3bfce.jpg) center center no-repeat; 
+			background-size: cover;
+		}
+		.college-pic:hover{
+			transform: scale(1.3);	
+		}
+	</style>
+</head>
+<body>
+	<div class="pic-wrapper">
+		<div class="college-pic">
+			
+		</div>
+	</div>
+</body>
+</html>
