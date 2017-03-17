@@ -1,0 +1,51 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body{
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+.wrap{
+	width: 478px;
+	height: 286px;
+	border: 1px solid #f1f1f1;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -239px;
+	margin-top: -180px;
+}
+.imgDiv{
+	position: absolute;
+	display: none;
+}
+.img1{
+	display: block;
+}
+ul{
+	position: absolute;
+	left: 44%;
+	bottom: 6%;
+	z-index: 10;
+}
+ul li{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: orange;
+	margin-right: 8px;
+}
+ul li.active{
+	background-color: red;
+}
+
+
+
+
+
+
+
+
+
