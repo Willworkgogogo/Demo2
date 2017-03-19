@@ -34,3 +34,12 @@ let [,,,last] = input;
 
 //展开 ， 数组展开 和 对象展开    和解构相反
 
+
+// enum
+enum Color { Red, Green, Blue};
+var c: string = Color[1];
+let d: Color = Color.Green;
+function tell() {
+    alert(d)
+}
+tell()

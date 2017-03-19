@@ -17,9 +17,25 @@ var kitty = {
 //     numLives: numLiveForCat
 // }
 kitty.name = "wang";
-//解构
+//数组解构
 var input = [1, 2, 3, 4];
 var first = input[0];
 // console.log(first);
 var last = input[3];
-console.log(last);
+// console.log(last);
+//对象解构
+//展开 ， 数组展开 和 对象展开    和解构相反
+// enum
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+;
+var c = Color[1];
+var d = Color.Green;
+function tell() {
+    alert(d);
+}
+tell();
