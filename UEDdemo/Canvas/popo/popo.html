@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>气泡canvas</title>
+	<style type="text/css">
+		*{ margin: 0; padding: 0; }
+		#canvas{ background: #000; }
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+
+	<script type="text/javascript">
+		var canvas = document.querySelector('#canvas'),
+			w      = canvas.width = window.innerWidth,
+			h      = canvas.height = window.innerHeight,
+			cxt    = canvas.getContext('2d'),
+			nums   = 2, // 生成个数
+			Obj    = [], // 保存属性
+			colors = ['red', 'blue', 'green', 'yellow']; // 颜色设置
+
+
+		// circle 画圆方法
+		function circle(cxt, x, y, r, color) {
+			cxt.save();
+			cxt.beginPath();
+			cxt.arc(x, y, r, 0, 2*Math.PI);
+			cxt.fillStyle = color;
+			cxt.fill();
+			cxt.restore();
+		}
+
+
+		canvas.onmousemove = function(ev) {
+			var ev = ev || window.event,
+				x  = ev.clientX,
+				y  = ev.ClientY;
+
+			for (var i = 0; i < nums; i++) {
+				var o = {
+					x    : Math.random() * 30 + x,
+					y    : Math.random() * 30 + y,
+					r    : Math.round(Math.random() * 20 + 1),
+					color: colors[Math.floor( Math.random() * colors.length )],
+					vx   : Math.random() * 3 - 3,
+					vy   : Math.random() * 3 - 3
+				}
+
+				Obj.push(o);
+
+				// 元素超过300个，移除头部，保证性能
+				if (Obj.length == 300) {	
+					Obj.shift();
+				}
+
+				//todo
+				circle(cxt, Obj[i].x, Obj[i].y, Obj[i].r, Obj[i].color)
+			}
+		}
+
+		// 动画
+		!function animate() {
+			cxt.clearRect(0, 0, w, h);
+			for(var i=0;i<Obj.length;i++){
+				Obj[i].x += Obj[i].vx;
+				Obj[i].y += Obj[i].vy;
+				if(Obj[i].x>w||Obj[i].x<0){
+					Obj[i].vx = -Obj[i].vx;
+				}else if(Obj[i].y>h||Obj[i].y<0){
+					Obj[i].vy = -Obj[i].vy;
+				}//边缘检测
+
+				 circle(cxt,Obj[i].x,Obj[i].y,Obj[i].r,Obj[i].color)
+
+			}
+
+			window.requestAnimationFrame(animate);
+		}();
+	</script>
+</body>
+</html>
