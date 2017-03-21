@@ -12,7 +12,7 @@ var Animal1 = (function () {
 var Richo = (function (_super) {
     __extends(Richo, _super);
     function Richo() {
-        return _super.call(this, "Richo") || this;
+        _super.call(this, "Richo");
     }
     return Richo;
 }(Animal1));
