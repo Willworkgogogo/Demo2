@@ -14,6 +14,10 @@ function createSquare(config) {
     }
     return newSquare;
 }
+readonly;
+x: number;
+readonly;
+y: number;
 var p1 = { x: 10, y: 10 };
 var mySearch;
 mySearch = function (source, subString) {
@@ -30,9 +34,3 @@ var Clock = (function () {
     }
     return Clock;
 }());
-
-// 函数接口
-interface myFunc {
-    (hello:string, age: string):bool
-
-}
