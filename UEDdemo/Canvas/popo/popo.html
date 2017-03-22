@@ -13,9 +13,9 @@
 
 	<script type="text/javascript">
 		var canvas = document.querySelector('#canvas'),
-			w      = canvas.width = window.innerWidth,
-			h      = canvas.height = window.innerHeight,
-			cxt    = canvas.getContext('2d'),
+			w      = canvas.width = window.innerWidth, // 画布宽度 = 窗口宽度
+			h      = canvas.height = window.innerHeight, // 画布高度 = 窗口高度
+			cxt    = canvas.getContext('2d'), // 获得上下文和绘画函数
 			nums   = 2, // 生成个数
 			Obj    = [], // 保存属性
 			colors = ['red', 'blue', 'green', 'yellow']; // 颜色设置
